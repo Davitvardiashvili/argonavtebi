@@ -1,0 +1,32 @@
+{% extends 'movement/base.html' %}
+
+{% block content %}
+<form method="post">
+    {% csrf_token %}
+    {{form}}
+    <input type="submit" value="Submit">
+</form>
+
+
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th>title</th>
+            <th>text</th>
+            <th>update</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody class="table-bordered">
+        {% for si in servic %}
+            <tr>
+                <td>{{si.title}}</td>
+                <td>{{si.text}}</td>
+                <td><a class="fa fa-close" aria-label="Close" href="{% url 'update-services' si.id %}">Edit</a></td>
+                <td><a class="fa fa-close" aria-label="Close" href="{% url 'delete-services' si.id %}">Delete</a></td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock content %}

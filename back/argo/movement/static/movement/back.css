@@ -1,0 +1,158 @@
+.buddy {
+  padding-left: 200px;
+  font-family: sans-serif;
+}
+body{
+  margin: 0;
+  font-family: sans-serif;
+}
+.navbar12 {
+  background: linear-gradient(to bottom, #ffffff, #4287f5);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 200px;
+  overflow-y: auto;
+}
+
+.navbar12 ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navbar12 li {
+  margin-bottom: 10px;
+}
+
+.navbar12 a {
+  display: block;
+  padding: 10px;
+  color: #333;
+  transition: 0.6s;
+  text-decoration: none;
+}
+
+.navbar12 a:hover {
+  background-color: #333;
+  color: #fff;
+  transition: 0.6s;
+}
+
+.navbar12 h3{
+
+  list-style: none;
+  padding: 0;
+  margin: 10px;
+}
+
+
+.login-form {
+  background: linear-gradient(to bottom, #ffffff, #4287f5);
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Style the form container */
+.form-group {
+  margin-bottom: 20px;
+}
+
+/* Style the form labels */
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+/* Style the form inputs */
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 12px;
+  border-radius: 5px;
+  border: none;
+  background-color: #f2f2f2;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+/* Style the login button */
+.btn {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 12px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #3e8e41;
+}
+
+/* Style the forgot password link */
+.forgot-password a {
+  color: #4CAF50;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.forgot-password a:hover {
+  text-decoration: underline;
+}
+form{
+    background-color:rgba(66,135,245,0.5);
+}
+.form-group{
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+
+  padding: 10px;
+}
+.sideimage{
+  width: 100%;
+  height: 100%;
+  max-width: 600px;
+  max-height: 500px;
+  border-radius: 10px;
+
+}
+#id_title{
+  justify-content: space-around;
+  width: 600px;
+}
+#id_side_picture{
+  width: 250px;
+  background: #4CAF50;
+  color: #f2f2f2;
+  padding: 10px;
+  border-radius: 10px;
+}
+.form-group label{
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+
+.thead-dark{
+  text-align: center;
+
+}
+.table-bordered{
+    text-align: center;
+}
+.table-bordered tr{
+  background: #bdbdbd;
+}
+.table-bordered tr:nth-child(even){
+  background: #a6a6a6;
+}

@@ -1,0 +1,44 @@
+{% extends 'movement/base.html' %}
+{% block content %}
+
+{% load static %}
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div style="display: block; align-items: center;">
+        <div class="form-group" style="justify-content: space-evenly">
+            <img class="sideimage" src="{% static 'images' %}/{{obj.side_picture}}">
+            <input type="file" class="form-control-file" name="side_picture" accept="image/*" id="id_side_picture">
+        </div>
+        <div class="form-group" style="justify-content: space-evenly">
+            <label for="id_title" >Title</label>
+            <input type="text" name="title" class="form-control" value="{{obj.title}}" maxlength="50" id="id_title">
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <div class="col">
+            <label for="id_text1">Text 1</label>
+            <textarea name="text1" cols="40" rows="10" class="form-control" maxlength="1000" id="id_text1">{{obj.text1}}</textarea>
+        </div>
+
+        <div class="col">
+            <label for="id_text2">Text 2</label>
+            <textarea name="text2" cols="40" class="form-control" rows="10" maxlength="1000" id="id_text2">{{obj.text2}}</textarea>
+        </div>
+
+        <div class="col">
+            <label for="id_text3">Text 3</label>
+            <textarea name="text3" cols="40" class="form-control" rows="10" maxlength="1000" id="id_text3">{{obj.text3}}</textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+
+
+</form>
+
+
+
+
+{% endblock content %}
