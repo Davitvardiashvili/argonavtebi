@@ -29,7 +29,7 @@
                     <div>
                         <div class="tm-brand-box">
                             <a href="{% url 'main' %}" class="logo">
-                                <img src="{% static 'img/logo-no-background.png' %}"  style="width: 200px;height: auto;" alt="">
+                                <img src="{% static 'img/vardos-logo-white.png' %}"  style="width: 450px;height: auto;" alt="">
                             </a>
                         </div>                
                         <ul id="tm-main-nav">
@@ -71,7 +71,7 @@
             <div class="tm-main">
                 <!-- Home section -->
                 <div class="tm-section-wrap">
-                    <div class="tm-parallax" data-parallax="scroll" data-image-src="{% static 'images' %}/{{home.side_picture}}"></div>
+                    <div class="tm-parallax" data-parallax="scroll" data-image-src="{% static 'images' %}/{{side_image_1.images}}"></div>
                     <section id="home" class="tm-section">
                         <h2 class="tm-text-primary">{{home.title}}</h2>
                         <hr class="mb-5">
@@ -124,7 +124,7 @@
                 </div>
                 <!-- Gallery section -->
                 <div class="tm-section-wrap">
-                    <div class="tm-parallax" data-parallax="scroll" data-image-src="img/argo1.jpg"></div>
+                    <div class="tm-parallax" data-parallax="scroll" data-image-src="{% static 'images' %}/{{side_image_2.images}}"></div>
                     <section id="gallery" class="tm-section">
                         <h2 class="tm-text-primary">Gallery</h2>
                         <hr class="mb-5">
@@ -135,493 +135,44 @@
                                     All
                                 </a>
                             </li>
-<!--                            <li>-->
-<!--                                <a href="javascript:void(0);" class="tm-gallery-link" data-filter="portrait">-->
-<!--                                    <i class="fas fa-portrait tm-gallery-link-icon"></i>-->
-<!--                                    Portraits-->
-<!--                                </a>-->
-<!--                            </li>-->
-<!--                            <li>-->
-<!--                                <a href="javascript:void(0);" class="tm-gallery-link" data-filter="nature">-->
-<!--                                    <i class="fas fa-leaf tm-gallery-link-icon"></i>-->
-<!--                                    Nature-->
-<!--                                </a>-->
-<!--                            </li>-->
-<!--                            <li>-->
-<!--                                <a href="javascript:void(0);" class="tm-gallery-link" data-filter="animal">-->
-<!--                                    <i class="fas fa-paw tm-gallery-link-icon"></i>-->
-<!--                                    Animals-->
-<!--                                </a>-->
-<!--                            </li>-->
-<!--                            <li>-->
-<!--                                <a href="javascript:void(0);" class="tm-gallery-link" data-filter="building">-->
-<!--                                    <i class="far fa-building tm-gallery-link-icon"></i>-->
-<!--                                    Buildings-->
-<!--                                </a>-->
-<!--                            </li>-->
                         </ul>
                         <div class="tm-gallery">
+                            {% load static %}
+                            {% for image in gallery %}
                             <figure class="effect-honey tm-gallery-item portrait">
-                                <img src="img/gallery/tn/air1.jpg" alt="Image"/>
+                                <img src="{% static 'images' %}/{{image.images}}" alt="Image"/>
                                 <figcaption>
                                     <h2><i>Argo</i></h2>
-                                    <a href="img/gallery/air1.jpg">View more</a>
+                                    <a href="{% static 'images' %}/{{image.images}}">View more</a>
                                 </figcaption>			
                             </figure>
-                            <figure class="effect-honey tm-gallery-item building">
-                                <img src="img/gallery/tn/air2.jpg" alt="Image"/>
-                                <figcaption>
-                                    <h2><i>Argo</i></h2>
-                                    <a href="img/gallery/air2.jpg">View more</a>
-                                </figcaption>			
-                            </figure>  
-                            <figure class="effect-honey tm-gallery-item nature">
-                                <img src="img/gallery/tn/air3.jpg" alt="Image"/>
-                                <figcaption>
-                                    <h2><i>Argo</i></h2>
-                                    <a href="img/gallery/air3.jpg">View more</a>
-                                </figcaption>			
-                            </figure>
-                            <figure class="effect-honey tm-gallery-item animal">
-                                <img src="img/gallery/tn/air4.jpg" alt="Image"/>
-                                <figcaption>
-                                    <h2><i>Argo</i></h2>
-                                    <a href="img/gallery/air4.jpg">View more</a>
-                                </figcaption>			
-                            </figure> 
-                            <figure class="effect-honey tm-gallery-item building">
-                                <img src="img/gallery/tn/air5.jpg" alt="Image"/>
-                                <figcaption>
-                                    <h2><i>Dreamy Honey</i></h2>
-                                    <a href="img/gallery/air5.jpg">View more</a>
-                                </figcaption>			
-                            </figure>
-                            <figure class="effect-honey tm-gallery-item nature">
-                                <img src="img/gallery/tn/air6.jpg" alt="Image"/>
-                                <figcaption>
-                                    <h2><i>Dreamy Honey</i></h2>
-                                    <a href="img/gallery/air6.jpg">View more</a>
-                                </figcaption>			
-                            </figure> 
-                            <figure class="effect-honey tm-gallery-item portrait">
-                                <img src="img/gallery/tn/air7.jpg" alt="Image"/>
-                                <figcaption>
-                                    <h2><i>Dreamy Honey</i></h2>
-                                    <a href="img/gallery/air7.jpg">View more</a>
-                                </figcaption>			
-                            </figure>
-                            <figure class="effect-honey tm-gallery-item animal">
-                                <img src="img/gallery/tn/air8.jpg" alt="Image"/>
-                                <figcaption>
-                                    <h2><i>Dreamy Honey</i></h2>
-                                    <a href="img/gallery/air8.jpg">View more</a>
-                                </figcaption>			
-                            </figure> 
-                            <figure class="effect-honey tm-gallery-item building">
-                                <img src="img/gallery/tn/air9.jpg" alt="Image"/>
-                                <figcaption>
-                                    <h2><i>Dreamy Honey</i></h2>
-                                    <a href="img/gallery/air9.jpg">View more</a>
-                                </figcaption>			
-                            </figure>
-                            <figure class="effect-honey tm-gallery-item portrait">
-                                <img src="img/gallery/tn/air10.jpg" alt="Image"/>
-                                <figcaption>
-                                    <h2><i>Dreamy Honey</i></h2>
-                                    <a href="img/gallery/air10.jpg">View more</a>
-                                </figcaption>			
-                            </figure>
-                            <figure class="effect-honey tm-gallery-item animal">
-                                <img src="img/gallery/tn/air11.jpg" alt="Image"/>
-                                <figcaption>
-                                    <h2><i>Dreamy Honey</i></h2>
-                                    <a href="img/gallery/air11.jpg">View more</a>
-                                </figcaption>			
-                            </figure>  
-                            <figure class="effect-honey tm-gallery-item nature">
-                                <img src="img/gallery/tn/nature-03.jpg" alt="Image"/>
-                                <figcaption>
-                                    <h2><i>Dreamy Honey</i></h2>
-                                    <a href="img/gallery/nature-03.jpg">View more</a>						
-                                </figcaption>			
-                            </figure>
-                            <figure class="effect-honey tm-gallery-item animal">
-                                <img src="img/gallery/tn/animal-04.jpg" alt="Image"/>
-                                <figcaption>
-                                    <h2><i>Dreamy Honey</i></h2>
-                                    <a href="img/gallery/animal-04.jpg">View more</a>						
-                                </figcaption>			
-                            </figure> 
-                            <figure class="effect-honey tm-gallery-item building">
-                                <img src="img/gallery/tn/building-04.jpg" alt="Image"/>
-                                <figcaption>
-                                    <h2><i>Dreamy Honey</i></h2>
-                                    <a href="img/gallery/building-04.jpg">View more</a>						
-                                </figcaption>			
-                            </figure>
-                            <figure class="effect-honey tm-gallery-item nature">
-                                <img src="img/gallery/tn/nature-04.jpg" alt="Image"/>
-                                <figcaption>
-                                    <h2><i>Dreamy Honey</i></h2>
-                                    <a href="img/gallery/nature-04.jpg">View more</a>						
-                                </figcaption>			
-                            </figure> 
-                            <figure class="effect-honey tm-gallery-item portrait">
-                                <img src="img/gallery/tn/portrait-04.jpg" alt="Image"/>
-                                <figcaption>
-                                    <h2><i>Dreamy Honey</i></h2>
-                                    <a href="img/gallery/portrait-04.jpg">View more</a>						
-                                </figcaption>			
-                            </figure>
-                            <figure class="effect-honey tm-gallery-item animal">
-                                <img src="img/gallery/tn/animal-05.jpg" alt="Image"/>
-                                <figcaption>
-                                    <h2><i>Dreamy Honey</i></h2>
-                                    <a href="img/gallery/animal-05.jpg">View more</a>						
-                                </figcaption>			
-                            </figure> 
-                            <figure class="effect-honey tm-gallery-item building">
-                                <img src="img/gallery/tn/building-05.jpg" alt="Image"/>
-                                <figcaption>
-                                    <h2><i>Dreamy Honey</i></h2>
-                                    <a href="img/gallery/building-05.jpg">View more</a>						
-                                </figcaption>			
-                            </figure>
-                            <figure class="effect-honey tm-gallery-item portrait">
-                                <img src="img/gallery/tn/portrait-05.jpg" alt="Image"/>
-                                <figcaption>
-                                    <h2><i>Dreamy Honey</i></h2>
-                                    <a href="img/gallery/portrait-05.jpg">View more</a>						
-                                </figcaption>			
-                            </figure>
-                            <figure class="effect-honey tm-gallery-item nature">
-                                <img src="img/gallery/tn/nature-05.jpg" alt="Image"/>
-                                <figcaption>
-                                    <h2><i>Dreamy Honey</i></h2>
-                                    <a href="img/gallery/nature-05.jpg">View more</a>						
-                                </figcaption>			
-                            </figure>  
-                            <figure class="effect-honey tm-gallery-item nature">
-                                <img src="img/gallery/tn/nature-06.jpg" alt="Image"/>
-                                <figcaption>
-                                    <h2><i>Dreamy Honey</i></h2>
-                                    <a href="img/gallery/nature-06.jpg">View more</a>						
-                                </figcaption>			
-                            </figure>
-                            <figure class="effect-honey tm-gallery-item animal">
-                                <img src="img/gallery/tn/animal-06.jpg" alt="Image"/>
-                                <figcaption>
-                                    <h2><i>Dreamy Honey</i></h2>
-                                    <a href="img/gallery/animal-06.jpg">View more</a>						
-                                </figcaption>			
-                            </figure> 
-                            <figure class="effect-honey tm-gallery-item building">
-                                <img src="img/gallery/tn/building-06.jpg" alt="Image"/>
-                                <figcaption>
-                                    <h2><i>Dreamy Honey</i></h2>
-                                    <a href="img/gallery/building-06.jpg">View more</a>						
-                                </figcaption>			
-                            </figure>
-                            <figure class="effect-honey tm-gallery-item portrait">
-                                <img src="img/gallery/tn/portrait-06.jpg" alt="Image"/>
-                                <figcaption>
-                                    <h2><i>Dreamy Honey</i></h2>
-                                    <a href="img/gallery/portrait-06.jpg">View more</a>						
-                                </figcaption>			
-                            </figure>
-                            <figure class="effect-honey tm-gallery-item nature">
-                                <img src="img/gallery/tn/nature-07.jpg" alt="Image"/>
-                                <figcaption>
-                                    <h2><i>Dreamy Honey</i></h2>
-                                    <a href="img/gallery/nature-07.jpg">View more</a>						
-                                </figcaption>			
-                            </figure> 
-                            <figure class="effect-honey tm-gallery-item portrait">
-                                <img src="img/gallery/tn/portrait-07.jpg" alt="Image"/>
-                                <figcaption>
-                                    <h2><i>Dreamy Honey</i></h2>
-                                    <a href="img/gallery/portrait-07.jpg">View more</a>						
-                                </figcaption>			
-                            </figure>
-                            <figure class="effect-honey tm-gallery-item animal">
-                                <img src="img/gallery/tn/animal-07.jpg" alt="Image"/>
-                                <figcaption>
-                                    <h2><i>Dreamy Honey</i></h2>
-                                    <a href="img/gallery/animal-07.jpg">View more</a>						
-                                </figcaption>			
-                            </figure> 
-                            <figure class="effect-honey tm-gallery-item building">
-                                <img src="img/gallery/tn/building-07.jpg" alt="Image"/>
-                                <figcaption>
-                                    <h2><i>Dreamy Honey</i></h2>
-                                    <a href="img/gallery/building-07.jpg">View more</a>						
-                                </figcaption>			
-                            </figure>
-                            <figure class="effect-honey tm-gallery-item portrait">
-                                <img src="img/gallery/tn/portrait-08.jpg" alt="Image"/>
-                                <figcaption>
-                                    <h2><i>Dreamy Honey</i></h2>
-                                    <a href="img/gallery/portrait-08.jpg">View more</a>						
-                                </figcaption>			
-                            </figure>
-                            <figure class="effect-honey tm-gallery-item building">
-                                <img src="img/gallery/tn/building-08.jpg" alt="Image"/>
-                                <figcaption>
-                                    <h2><i>Dreamy Honey</i></h2>
-                                    <a href="img/gallery/building-08.jpg">View more</a>						
-                                </figcaption>			
-                            </figure>  
-                            <figure class="effect-honey tm-gallery-item nature">
-                                <img src="img/gallery/tn/nature-08.jpg" alt="Image"/>
-                                <figcaption>
-                                    <h2><i>Dreamy Honey</i></h2>
-                                    <a href="img/gallery/nature-08.jpg">View more</a>						
-                                </figcaption>			
-                            </figure>
-                            <figure class="effect-honey tm-gallery-item animal">
-                                <img src="img/gallery/tn/animal-08.jpg" alt="Image"/>
-                                <figcaption>
-                                    <h2><i>Dreamy Honey</i></h2>
-                                    <a href="img/gallery/animal-08.jpg">View more</a>						
-                                </figcaption>			
-                            </figure> 
-                            <figure class="effect-honey tm-gallery-item building">
-                                <img src="img/gallery/tn/building-09.jpg" alt="Image"/>
-                                <figcaption>
-                                    <h2><i>Dreamy Honey</i></h2>
-                                    <a href="img/gallery/building-09.jpg">View more</a>						
-                                </figcaption>			
-                            </figure>
-                            <figure class="effect-honey tm-gallery-item nature">
-                                <img src="img/gallery/tn/nature-09.jpg" alt="Image"/>
-                                <figcaption>
-                                    <h2><i>Dreamy Honey</i></h2>
-                                    <a href="img/gallery/nature-09.jpg">View more</a>						
-                                </figcaption>			
-                            </figure> 
-                            <figure class="effect-honey tm-gallery-item portrait">
-                                <img src="img/gallery/tn/portrait-09.jpg" alt="Image"/>
-                                <figcaption>
-                                    <h2><i>Dreamy Honey</i></h2>
-                                    <a href="img/gallery/portrait-09.jpg">View more</a>						
-                                </figcaption>			
-                            </figure>
-                            <figure class="effect-honey tm-gallery-item animal">
-                                <img src="img/gallery/tn/animal-09.jpg" alt="Image"/>
-                                <figcaption>
-                                    <h2><i>Dreamy Honey</i></h2>
-                                    <a href="img/gallery/animal-09.jpg">View more</a>						
-                                </figcaption>			
-                            </figure> 
+                            {% endfor %}
                         </div>
                     </section>
                 </div>
+
+
                 <!-- About section -->
                 <div class="tm-section-wrap">
-                    <div class="tm-parallax" data-parallax="scroll" data-image-src="img/argo3.jpg"></div>
+                    <div class="tm-parallax" data-parallax="scroll" data-image-src="{% static 'images' %}/{{side_image_3.images}}"></div>
                     <section id="about" class="tm-section">
                         <h2 class="tm-text-primary">About Argo</h2>
                         <hr class="mb-5">
                         
-                        <div class="row tm-row-about">
+                        <div class="row" style="margin:20px 0px;">
+                            {% for ab in abouts %}
                             <div class="tm-col-about tm-col-about-l">
+
                                 <p class="mb-4">
-                            If you want to support TemplateMo, you can contribute <a rel="sponsored" href="https://paypal.me/templatemo" target="_parent">a small donation via <strong>PayPal</strong></a>. This will be very helpful. Thank you. </p>
-                                <p class="mb-4">
-                                    Aliquam ornare varius erat vel aliquet. Proin ac neque a tortor tristique semper eget eget sapien. Morbi vitae diam a odio lobortis mattis sed nec justo. 
+                                    {{ab.text}}
                                 </p>
-                                <p class="mb-4">
-                                    Suspendisse sagittis tortor vel turpis aliquet, vitae molestie erat luctus.
-                                </p>
+
                             </div>
-                            <div class="tm-col-about tm-col-about-r">
-                                <img src="img/argo2.jpg" alt="Image" class="img-fluid mb-5 tm-img-about">
-                                <p>
-                                    Duis fringilla eget purus luctus sodales. Sed auctor odio quis ligula dignissim efficitur vitae vitae quam.
-                                </p>
-                            </div>
-                        </div>
-<!--                        <div class="mt-5">-->
-<!--                            <div class="tm-carousel">-->
-<!--                                <div class="tm-carousel-item">-->
-<!--                                    <figure class="effect-honey mb-4">-->
-<!--                                        <img src="img/about-01.jpg" alt="Featured Item">-->
-<!--                                        <figcaption>-->
-<!--                                            <ul class="tm-social">-->
-<!--                                                <li><a href="https://facebook.com" class="tm-social-link"><i class="fab fa-facebook"></i></a></li>-->
-<!--                                                <li><a href="https://twitter.com" class="tm-social-link"><i class="fab fa-twitter"></i></a></li>-->
-<!--                                                <li><a href="https://instagram.com" class="tm-social-link"><i class="fab fa-instagram"></i></a></li>-->
-<!--                                            </ul>-->
-<!--                                        </figcaption>-->
-<!--                                    </figure>-->
-<!--                                    <div class="tm-about-text">-->
-<!--                                        <h3 class="mb-3 tm-text-primary tm-about-title">Calvin Walk</h3>-->
-<!--                                        <p>Aliquam efficitur, velit ut aliquet molestie, nulla dolor faucibus neque, quis hendrerit.</p>-->
-<!--                                        <h4 class="tm-text-secondary tm-about-subtitle">Founder and CEO</h4>-->
-<!--                                    </div>-->
-<!--                                </div>-->
-<!--                                -->
-<!--                                <div class="tm-carousel-item">-->
-<!--                                    <figure class="effect-honey mb-4">-->
-<!--                                        <img src="img/about-02.jpg" alt="Featured Item">-->
-<!--                                        <figcaption>-->
-<!--                                            <ul class="tm-social">-->
-<!--                                                <li><a href="https://facebook.com" class="tm-social-link"><i class="fab fa-facebook"></i></a></li>-->
-<!--                                                <li><a href="https://twitter.com" class="tm-social-link"><i class="fab fa-twitter"></i></a></li>-->
-<!--                                                <li><a href="https://instagram.com" class="tm-social-link"><i class="fab fa-instagram"></i></a></li>-->
-<!--                                            </ul>-->
-<!--                                        </figcaption>-->
-<!--                                    </figure>-->
-<!--                                    <div class="tm-about-text">-->
-<!--                                        <h3 class="mb-3 tm-text-primary tm-about-title">Jenifer Soft</h3>-->
-<!--                                        <p>This is a carousel for a list of 10 team members. Each member image hover has 3 social icons.</p>-->
-<!--                                        <h4 class="tm-text-secondary tm-about-subtitle">Managing Director</h4>-->
-<!--                                    </div>-->
-<!--                                </div>-->
-
-<!--                                <div class="tm-carousel-item">-->
-<!--                                    <figure class="effect-honey mb-4">-->
-<!--                                        <img src="img/about-03.jpg" alt="Featured Item">-->
-<!--                                        <figcaption>-->
-<!--                                            <ul class="tm-social">-->
-<!--                                                <li><a href="https://facebook.com" class="tm-social-link"><i class="fab fa-facebook"></i></a></li>-->
-<!--                                                <li><a href="https://twitter.com" class="tm-social-link"><i class="fab fa-twitter"></i></a></li>-->
-<!--                                                <li><a href="https://instagram.com" class="tm-social-link"><i class="fab fa-instagram"></i></a></li>-->
-<!--                                            </ul>-->
-<!--                                        </figcaption>-->
-<!--                                    </figure>-->
-<!--                                    <div class="tm-about-text">-->
-<!--                                        <h3 class="mb-3 tm-text-primary tm-about-title">David Rock</h3>-->
-<!--                                        <p>Aliquam efficitur, velit ut aliquet molestie, nulla dolor faucibus neque, quis hendrerit.</p>-->
-<!--                                        <h4 class="tm-text-secondary tm-about-subtitle">Financial Officer</h4>-->
-<!--                                    </div>-->
-<!--                                </div>-->
-
-<!--                                <div class="tm-carousel-item">-->
-<!--                                    <figure class="effect-honey mb-4">-->
-<!--                                        <img src="img/about-01.jpg" alt="Featured Item">-->
-<!--                                        <figcaption>-->
-<!--                                            <ul class="tm-social">-->
-<!--                                                <li><a href="https://facebook.com" class="tm-social-link"><i class="fab fa-facebook"></i></a></li>-->
-<!--                                                <li><a href="https://twitter.com" class="tm-social-link"><i class="fab fa-twitter"></i></a></li>-->
-<!--                                                <li><a href="https://instagram.com" class="tm-social-link"><i class="fab fa-instagram"></i></a></li>-->
-<!--                                            </ul>-->
-<!--                                        </figcaption>-->
-<!--                                    </figure>-->
-<!--                                    <div class="tm-about-text">-->
-<!--                                        <h3 class="mb-3 tm-text-primary tm-about-title">Calvin Second</h3>-->
-<!--                                        <p>Aliquam efficitur, velit ut aliquet molestie, nulla dolor faucibus neque, quis hendrerit.</p>-->
-<!--                                        <h4 class="tm-text-secondary tm-about-subtitle">Senior Director</h4>-->
-<!--                                    </div>-->
-<!--                                </div>-->
-<!--                                -->
-<!--                                <div class="tm-carousel-item">-->
-<!--                                    <figure class="effect-honey mb-4">-->
-<!--                                        <img src="img/about-02.jpg" alt="Featured Item">-->
-<!--                                        <figcaption>-->
-<!--                                            <ul class="tm-social">-->
-<!--                                                <li><a href="https://facebook.com" class="tm-social-link"><i class="fab fa-facebook"></i></a></li>-->
-<!--                                                <li><a href="https://twitter.com" class="tm-social-link"><i class="fab fa-twitter"></i></a></li>-->
-<!--                                                <li><a href="https://instagram.com" class="tm-social-link"><i class="fab fa-instagram"></i></a></li>-->
-<!--                                            </ul>-->
-<!--                                        </figcaption>-->
-<!--                                    </figure>-->
-<!--                                    <div class="tm-about-text">-->
-<!--                                        <h3 class="mb-3 tm-text-primary tm-about-title">Jenifer Second</h3>-->
-<!--                                        <p>This is a carousel for a list of 10 team members. Each member image hover has 3 social icons.</p>-->
-<!--                                        <h4 class="tm-text-secondary tm-about-subtitle">Accounting Officer</h4>-->
-<!--                                    </div>-->
-<!--                                </div>-->
-
-<!--                                <div class="tm-carousel-item">-->
-<!--                                    <figure class="effect-honey mb-4">-->
-<!--                                        <img src="img/about-03.jpg" alt="Featured Item">-->
-<!--                                        <figcaption>-->
-<!--                                            <ul class="tm-social">-->
-<!--                                                <li><a href="https://facebook.com" class="tm-social-link"><i class="fab fa-facebook"></i></a></li>-->
-<!--                                                <li><a href="https://twitter.com" class="tm-social-link"><i class="fab fa-twitter"></i></a></li>-->
-<!--                                                <li><a href="https://instagram.com" class="tm-social-link"><i class="fab fa-instagram"></i></a></li>-->
-<!--                                            </ul>-->
-<!--                                        </figcaption>-->
-<!--                                    </figure>-->
-<!--                                    <div class="tm-about-text">-->
-<!--                                        <h3 class="mb-3 tm-text-primary tm-about-title">David Second</h3>-->
-<!--                                        <p>Aliquam efficitur, velit ut aliquet molestie, nulla dolor faucibus neque, quis hendrerit.</p>-->
-<!--                                        <h4 class="tm-text-secondary tm-about-subtitle">Financial Assistant</h4>-->
-<!--                                    </div>-->
-<!--                                </div>-->
-
-<!--                                <div class="tm-carousel-item">-->
-<!--                                    <figure class="effect-honey mb-4">-->
-<!--                                        <img src="img/about-01.jpg" alt="Featured Item">-->
-<!--                                        <figcaption>-->
-<!--                                            <ul class="tm-social">-->
-<!--                                                <li><a href="https://facebook.com" class="tm-social-link"><i class="fab fa-facebook"></i></a></li>-->
-<!--                                                <li><a href="https://twitter.com" class="tm-social-link"><i class="fab fa-twitter"></i></a></li>-->
-<!--                                                <li><a href="https://instagram.com" class="tm-social-link"><i class="fab fa-instagram"></i></a></li>-->
-<!--                                            </ul>-->
-<!--                                        </figcaption>-->
-<!--                                    </figure>-->
-<!--                                    <div class="tm-about-text">-->
-<!--                                        <h3 class="mb-3 tm-text-primary tm-about-title">Calvin Third</h3>-->
-<!--                                        <p>Aliquam efficitur, velit ut aliquet molestie, nulla dolor faucibus neque, quis hendrerit.</p>-->
-<!--                                        <h4 class="tm-text-secondary tm-about-subtitle">Designer</h4>-->
-<!--                                    </div>-->
-<!--                                </div>-->
-<!--                                -->
-<!--                                <div class="tm-carousel-item">-->
-<!--                                    <figure class="effect-honey mb-4">-->
-<!--                                        <img src="img/about-02.jpg" alt="Featured Item">-->
-<!--                                        <figcaption>-->
-<!--                                            <ul class="tm-social">-->
-<!--                                                <li><a href="https://facebook.com" class="tm-social-link"><i class="fab fa-facebook"></i></a></li>-->
-<!--                                                <li><a href="https://twitter.com" class="tm-social-link"><i class="fab fa-twitter"></i></a></li>-->
-<!--                                                <li><a href="https://instagram.com" class="tm-social-link"><i class="fab fa-instagram"></i></a></li>-->
-<!--                                            </ul>-->
-<!--                                        </figcaption>-->
-<!--                                    </figure>-->
-<!--                                    <div class="tm-about-text">-->
-<!--                                        <h3 class="mb-3 tm-text-primary tm-about-title">Jenifer Third</h3>-->
-<!--                                        <p>This is a carousel for a list of 10 team members. Each member image hover has 3 social icons.</p>-->
-<!--                                        <h4 class="tm-text-secondary tm-about-subtitle">Program Director</h4>-->
-<!--                                    </div>-->
-<!--                                </div>-->
-
-<!--                                <div class="tm-carousel-item">-->
-<!--                                    <figure class="effect-honey mb-4">-->
-<!--                                        <img src="img/about-03.jpg" alt="Featured Item">-->
-<!--                                        <figcaption>-->
-<!--                                            <ul class="tm-social">-->
-<!--                                                <li><a href="https://facebook.com" class="tm-social-link"><i class="fab fa-facebook"></i></a></li>-->
-<!--                                                <li><a href="https://twitter.com" class="tm-social-link"><i class="fab fa-twitter"></i></a></li>-->
-<!--                                                <li><a href="https://instagram.com" class="tm-social-link"><i class="fab fa-instagram"></i></a></li>-->
-<!--                                            </ul>-->
-<!--                                        </figcaption>-->
-<!--                                    </figure>-->
-<!--                                    <div class="tm-about-text">-->
-<!--                                        <h3 class="mb-3 tm-text-primary tm-about-title">David Three</h3>-->
-<!--                                        <p>Aliquam efficitur, velit ut aliquet molestie, nulla dolor faucibus neque, quis hendrerit.</p>-->
-<!--                                        <h4 class="tm-text-secondary tm-about-subtitle">Financial Assistant</h4>-->
-<!--                                    </div>-->
-<!--                                </div>-->
-
-<!--                                <div class="tm-carousel-item">-->
-<!--                                    <figure class="effect-honey mb-4">-->
-<!--                                        <img src="img/about-01.jpg" alt="Featured Item">-->
-<!--                                        <figcaption>-->
-<!--                                            <ul class="tm-social">-->
-<!--                                                <li><a href="https://facebook.com" class="tm-social-link"><i class="fab fa-facebook"></i></a></li>-->
-<!--                                                <li><a href="https://twitter.com" class="tm-social-link"><i class="fab fa-twitter"></i></a></li>-->
-<!--                                                <li><a href="https://instagram.com" class="tm-social-link"><i class="fab fa-instagram"></i></a></li>-->
-<!--                                            </ul>-->
-<!--                                        </figcaption>-->
-<!--                                    </figure>-->
-<!--                                    <div class="tm-about-text">-->
-<!--                                        <h3 class="mb-3 tm-text-primary tm-about-title">Calvin Four</h3>-->
-<!--                                        <p>Aliquam efficitur, velit ut aliquet molestie, nulla dolor faucibus neque, quis hendrerit.</p>-->
-<!--                                        <h4 class="tm-text-secondary tm-about-subtitle">Media Partner</h4>-->
-<!--                                    </div>-->
-<!--                                </div>-->
+                            {% endfor %}
+<!--                            <div class="tm-col-about tm-col-about-r">-->
+<!--                                <p>-->
+<!--                                    Duis fringilla eget purus luctus sodales. Sed auctor odio quis ligula dignissim efficitur vitae vitae quam.-->
+<!--                                </p>-->
 <!--                            </div>-->
                         </div>
                     </section>
@@ -629,13 +180,14 @@
 
                 <!-- Contact section -->
                 <div class="tm-section-wrap">
-                    <div class="tm-parallax" data-parallax="scroll" data-image-src="img/argo4.jpg"></div>
+                    <div class="tm-parallax" data-parallax="scroll" data-image-src="{% static 'images' %}/{{side_image_4.images}}"></div>
                     <div id="contact" class="tm-section">
-                        <h2 class="tm-text-primary">Contact Us</h2>
+                        <h2 class="tm-text-primary">{{contact.title}}</h2>
                         <hr class="mb-5">
                         <div class="row">
                             <div class="col-xl-6 tm-contact-col-l mb-4">
-                                <form id="contact-form" action="" method="POST" class="tm-contact-form">
+                                <form id="contact-form" action="{% url 'main' %}" method="POST" class="tm-contact-form">
+                                    {% csrf_token %}
                                     <div class="form-group">
                                         <input type="text" name="name" class="form-control rounded-0" placeholder="Name" required />
                                     </div>
@@ -643,11 +195,12 @@
                                         <input type="email" name="email" class="form-control rounded-0" placeholder="Email" required />
                                     </div>
                                     <div class="form-group">
-                                        <select class="form-control" id="contact-select" name="inquiry">
+                                        <select class="form-control" id="contact-select" name="subject">
                                             <option value="-">Subject</option>
-                                            <option value="sales">Sales &amp; Marketing</option>
-                                            <option value="creative">Creative Design</option>
-                                            <option value="uiux">UI / UX</option>
+                                            <option value="Installation">Installation</option>
+                                            <option value="Service And Maintenance">Service And Maintenance</option>
+                                            <option value="Commercial">Commercial</option>
+                                            <option value="Other">Other</option>
                                         </select>
                                     </div>
                                     <div class="form-group">
@@ -664,16 +217,12 @@
                                 <div class="mapouter mb-4">
                                     <div class="gmap_canvas">
                                         <iframe width="100%" height="520" id="gmap_canvas"
-                                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d302102.4710655975!2d-74.08490134574301!3d40.678178873862786!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xdb0d01bba7e3c6f3!2sBrooklyn%2C%20NY%2C%20USA!5e0!3m2!1sen!2suk!4v1650327975466!5m2!1sen!2suk"
-                                            frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d18418.21420052927!2d-73.98044645596346!3d40.60536211561156!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c244ee2225028b%3A0x200b9f644d526415!2s1802%20Ocean%20Pkwy%20Apt%20F18%2C%20Brooklyn%2C%20NY%2011223%2C%20USA!5e0!3m2!1sen!2sge!4v1684054524700!5m2!1sen!2sge"                                            frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
                                     </div>
                                 </div>
-            
                                 <!-- Address -->
                                 <address class="mb-4">
-                                    120-240 eget purus luctus sodales. Sed<br>
-                                    auctor odio quis ligula dignissim efficitur<br>
-                                    vitae vitae quam 16502
+                                    {{contact.address}}
                                 </address>
             
                                 <!-- Links -->
@@ -681,13 +230,19 @@
                                     <li class="mb-2">
                                         <a href="tel:848-444-0036">
                                             <i class="fas fa-phone mr-2 tm-contact-link-icon"></i>
-                                            Tel: 848-444-0036
+                                            Tel: {{contact.mobile_number}}
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="mailto:info@company.com">
+
+                                        <a href="whatsapp://send?phone=+1-{{contact.mobile_number}}">
+                                            <i class="fab fa-whatsapp mr-2 tm-contact-link-icon"></i>
+                                            Chat on WhatsApp</a>
+                                    </li>
+                                    <li>
+                                        <a href="mailto:{{contact.email}}">
                                             <i class="fas fa-at mr-2 tm-contact-link-icon"></i>
-                                            Email: zurabtvaradze@gmail.com
+                                            Email: {{contact.email}}
                                         </a>
                                     </li>
                                 </ul>

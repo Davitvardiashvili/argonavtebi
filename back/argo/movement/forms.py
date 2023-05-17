@@ -1,5 +1,5 @@
 from django.forms import ModelForm
-from .models import HomePage, ServicesPage, Gallery, AboutPage, ContactPage
+from .models import HomePage, ServicesPage, Gallery, AboutPage, ContactPage,SideImages
 
 
 class HomeForm(ModelForm):
@@ -16,18 +16,18 @@ class ServicesForm(ModelForm):
         labels = {'title': 'title', 'text': 'text'}
 
 
+
 class GalleryForm(ModelForm):
     class Meta:
         model = Gallery
-        fields = ['images']
-        labels = {'images': 'Image'}
+        fields = ('images',)
 
 
 class AboutForm(ModelForm):
     class Meta:
         model = AboutPage
-        fields = ['title', 'text']
-        labels = {'title': 'title', 'text': 'text'}
+        fields = ['text']
+        labels = {'text': 'text'}
 
 
 class ContactForm(ModelForm):
@@ -35,3 +35,9 @@ class ContactForm(ModelForm):
         model = ContactPage
         fields = ['title', 'address', 'mobile_number', 'email']
         labels = {'title': 'title', 'address': 'address', 'mobile_number': 'mobile_number', 'email': 'email'}
+
+
+class SideImagesForm(ModelForm):
+    class Meta:
+        model = SideImages
+        fields = ('images',)

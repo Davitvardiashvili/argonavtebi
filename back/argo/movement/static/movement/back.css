@@ -4,10 +4,11 @@
 }
 body{
   margin: 0;
+  background: #fafafa;
   font-family: sans-serif;
 }
 .navbar12 {
-  background: linear-gradient(to bottom, #ffffff, #4287f5);
+  background: #222224;
   position: fixed;
   top: 0;
   bottom: 0;
@@ -29,19 +30,19 @@ body{
 .navbar12 a {
   display: block;
   padding: 10px;
-  color: #333;
+  color: #FFFFFF;
   transition: 0.6s;
   text-decoration: none;
 }
 
 .navbar12 a:hover {
-  background-color: #333;
-  color: #fff;
+  background-color: #FFFFFF;
+  color: #222224;
   transition: 0.6s;
 }
 
 .navbar12 h3{
-
+  color: #FFFFFF;
   list-style: none;
   padding: 0;
   margin: 10px;
@@ -49,7 +50,7 @@ body{
 
 
 .login-form {
-  background: linear-gradient(to bottom, #ffffff, #4287f5);
+  background: #fafafa;
   display: flex;
 
   justify-content: center;
@@ -108,7 +109,7 @@ input[type="password"] {
   text-decoration: underline;
 }
 form{
-    background-color:rgba(66,135,245,0.5);
+    background-color:rgba(145, 113, 235,0.4);
 }
 .form-group{
   display: flex;
@@ -155,4 +156,15 @@ form{
 }
 .table-bordered tr:nth-child(even){
   background: #a6a6a6;
+}
+
+.gallery{
+  display: flex;
+  flex-direction: column;
+}
+
+.imagia{
+  width: 200px;
+  height: 200px;
+  border-radius: 20px;
 }

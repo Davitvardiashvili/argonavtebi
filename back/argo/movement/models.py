@@ -29,11 +29,10 @@ class ServicesPage(models.Model):
 
 
 class Gallery(models.Model):
-    images = models.ImageField(null=True, blank=True)
+    images = models.ImageField(upload_to='images',default="user.png")
 
 
 class AboutPage(models.Model):
-    title = models.CharField(max_length=50, blank=True, null=True)
     text = models.TextField(max_length=1000, blank=True, null=True)
 
 
@@ -42,3 +41,7 @@ class ContactPage(models.Model):
     address = models.CharField(max_length=100, blank=True, null=True)
     mobile_number = models.CharField(max_length=100, blank=True, null=True)
     email = models.CharField(max_length=100, blank=True, null=True)
+
+
+class SideImages(models.Model):
+    images = models.ImageField(upload_to='images',default="user.png")

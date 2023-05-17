@@ -1,0 +1,44 @@
+{% extends 'movement/base.html' %}
+
+{% block content %}
+<!--<form method="post" enctype="multipart/form-data">-->
+<!--    {% csrf_token %}-->
+<!--    {{ form.as_p }}-->
+<!--    <input type="submit" value="Add">-->
+<!--</form>-->
+
+
+<div class="gallery">
+    {% load static %}
+    <table class="table table-responsive-xl">
+        <thead class="thead-dark">
+            <tr>
+                <th>#</th>
+                <th>Image</th>
+                <th>Edit</th>
+            </tr>
+        </thead>
+        <tbody class="table-bordered">
+            {% for image in images %}
+                <tr>
+                    <td>
+                        <p>{{image.id}}</p>
+                    </td>
+                    <td>
+                        <img class="imagia" src="{% static 'images' %}/{{image.images}}" alt="{{ image.id }}">
+
+                    </td>
+                    <td>
+                        <a href="{% url 'update-side-images' image.id %}">Edit</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+
+    </table>
+
+
+</div>
+
+
+{% endblock content %}

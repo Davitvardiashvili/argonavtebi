@@ -3,6 +3,34 @@
 {% block content %}
 <form method="post">
     {% csrf_token %}
-    {{form}}
+    <label>About Text</label>
+    <textarea name="text" cols="40" rows="10" maxlength="1000" id="id_text">
+</textarea>
+    <input type="submit" value="add">
 </form>
+
+<table class="table table-responsive-xl">
+    <thead class="thead-dark" >
+        <tr>
+            <th>Text</th>
+            <th>edit</th>
+            <th>delete</th>
+        </tr>
+    </thead>
+    <tbody class="table-bordered">
+        <tr>
+            {% for ab in abouts %}
+                <tr>
+                    <td>{{ab.text}}</td>
+                    <td><a href="{% url 'update-about' ab.id %}">Edit</a></td>
+                    <td><a href="{% url 'delete-about' ab.id %}">delete</a></td>
+                </tr>
+            {% endfor %}
+        </tr>
+    </tbody>
+</table>
+
+
+
+
 {% endblock content %}

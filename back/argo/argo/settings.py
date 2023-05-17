@@ -6,7 +6,7 @@ SECRET_KEY = 'django-insecure-8@y29@i@fl@f13x+c2(83k_cx3y9gw#%-3l=&ud8+y-w##d&&h
 
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 INSTALLED_APPS = [
@@ -95,3 +95,5 @@ MEDIA_URL = '/images/'
 MEDIA_ROOT = BASE_DIR / 'movement/static/images/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
